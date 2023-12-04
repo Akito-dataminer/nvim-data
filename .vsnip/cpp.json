@@ -1,0 +1,252 @@
+{
+  "mit_header": {
+    "prefix": "mit_header",
+    "body": [
+      "/*****************************************************************",
+      " * Copyright(c) ${1:year} ${VIM:system('git config user.name')}*",
+      " * This software is released under the MIT License.",
+      " * Refer the accompanying LICENSE.txt or the description",
+      " * at the provided URL for details.",
+      " * http://opensource.org/licenses/mit-license.php",
+      " ******************************************************************/",
+      "",
+      "${2:#pragma once}",
+      "$0"
+    ],
+    "description": "add mit license"
+  },
+  "boost_test_case": {
+    "prefix": "test_case",
+    "body": [
+      "BOOST_AUTO_TEST_CASE( test_${1:case_name} ) {",
+      "${0}",
+      "}"
+    ],
+    "description": "add codes for boost test"
+  },
+  "boost_test_body": {
+    "prefix": "test_body",
+    "body": [
+      "#include \"${1}\"",
+      "",
+      "#include <boost/test/unit_test.hpp>",
+      "",
+      "BOOST_AUTO_TEST_SUITE( test_${2:unit_name} )",
+      "",
+      "BOOST_AUTO_TEST_CASE( test_${3:case_name} ) {",
+      "\t${0}",
+      "}",
+      "",
+      "BOOST_AUTO_TEST_SUITE_END()"
+    ],
+    "description": "add codes for boost test"
+  },
+  "comment_block_oneline": {
+    "prefix": "comment_block_oneline",
+    "body": [
+      "/* $1 */"
+    ],
+    "description": "/* comment */"
+  },
+  "comment_block": {
+    "prefix": "comment_block",
+    "body": [
+      "/*",
+      " * $1",
+      " */"
+    ],
+    "description": "insert multiple line commentout"
+  },
+  "for": {
+    "prefix": "for",
+    "body": [
+      "for (${1:size_t} ${2:i} = ${3:0}; $2 < ${4:length}; $2++) {",
+      "\t$0",
+      "}"
+    ],
+    "description": "Code snippet for 'for' loop"
+  },
+  "for_itr": {
+    "prefix": "for_itr",
+    "body": [
+      "for ( ${1:auto} ${2:itr} : ${3:container} ) {",
+      "\t$0",
+      "}"
+    ],
+    "description": "for loop with itr"
+  },
+  "enum": {
+    "prefix": "enum",
+    "body": [
+      "enum ${1} {",
+      "\t$2",
+      "};"
+    ],
+    "description": "Code snippet for enum"
+  },
+  "enum class": {
+    "prefix": "enumc",
+    "body": [
+      "enum class ${1} {",
+      "\t$2",
+      "};"
+    ],
+    "description": "Code snippet for enum class (after c++11)"
+  },
+  "do": {
+    "prefix": "do",
+    "body": ["do {", "\t$0", "} while($1);"],
+    "description": "Code snippet for do...while loop"
+  },
+  "while": {
+    "prefix": "while",
+    "body": ["while ($1) {", "\t$2", "}"],
+    "description": ""
+  },
+  "class": {
+    "prefix": "class",
+    "body": [
+      "class ${1:class_name} {",
+      "public:",
+      "\texplicit $1() = default;",
+      "\texplicit $1( ${3:type} ${4:var} ) {}",
+      "\t$1( $1 const & ) = default;",
+      "\t$1 &operator= ( $1 const & ) = default;",
+      "\t$1( $1 && ) noexcept = default;",
+      "\t$1 &operator= ( $1 && ) noexcept = default;",
+      "\t~$1() = default;",
+      "private:",
+      "\t$2",
+      "};"
+    ],
+    "description": "Code snippet for class"
+  },
+  "copy-semantics": {
+    "prefix": "copySemantics",
+    "body": [
+      "$1 ( $1 const & ) = default;",
+      "$1 & operator= ( $1 const & ) = default;"
+    ],
+    "description": "snippet for copy-constructor and copy-assignment-operator"
+  },
+  "move-semantics": {
+    "prefix": "moveSemantics",
+    "body": [
+      "$1 ( $1 && ) noexcept = default;",
+      "$1 & operator= ( $1 && ) noexcept = default;"
+    ],
+    "description": "snippet for move-constructor and move-assignment-operator"
+  },
+  "constructor-implement": {
+    "prefix": "constructor-implement",
+    "body": [
+      "${1:CLASS_NAME}::$1(${2}){",
+      "}"
+    ],
+    "description": "constructor implementation"
+  },
+  "destructor-implement": {
+    "prefix": "destructor-implement",
+    "body": [
+      "${1:CLASS_NAME}::~$1(${2}){",
+      "}"
+    ],
+    "description": "constructor implementation"
+  },
+  "if": {
+    "prefix": "if",
+    "body": [
+      "if ($1) {",
+      "\t$2",
+      "}"
+    ],
+    "description": "Code snippet for if statement"
+  },
+  "else": {
+    "prefix": "else",
+    "body": [
+      "else {",
+      "\t$1",
+      "}"
+    ],
+    "description": "Code snippet for else statement"
+  },
+  "else if": {
+    "prefix": "elif",
+    "body": [
+      "else if ($1) {",
+      "\t$2",
+      "}"
+    ],
+    "description": "Code snippet for else-if statement"
+  },
+  "namespace": {
+    "prefix": "namespace",
+    "body": [
+      "namespace ${1} {",
+      "$2",
+      "} // namespace $1"
+    ]
+  },
+  "#ifdef": {
+    "prefix": "#ifdef",
+    "body": ["#ifdef ${1:DEBUG}", "$0", "#endif // ${DEBUG}"],
+    "description": "Code snippet for #ifdef"
+  },
+  "#ifndef": {
+    "prefix": "#ifndef",
+    "body": ["#ifndef ${1:DEBUG}", "$0", "#endif // !$1"],
+    "description": "Code snippet for #ifndef"
+  },
+  "#if": {
+    "prefix": "#if",
+    "body": ["#if ${1:0}", "$0", "#endif // $1"],
+    "description": "Code snippet for #if"
+  },
+  "struct": {
+    "prefix": "struct",
+    "body": [
+      "struct ${1:MyStruct} {",
+      "\t$2",
+      "};"
+    ],
+    "description": "Code snippet for struct"
+  },
+  "switch": {
+    "prefix": "switch",
+    "body": [
+      "switch (${1:switch_on}) {",
+      "\tdefault:",
+      "\t\t$0",
+      "\t\tbreak;",
+      "}"
+    ],
+    "description": "Code snippet for switch statement"
+  },
+  "lambda": {
+    "prefix": "lambda",
+    "body": [
+      "auto $1 = [$2]( $3 ) constexpr { $4 };"
+    ],
+    "description": "Code snippet for lambda function"
+  },
+  "cout": {
+    "prefix": "cout",
+    "body": [
+      "std::cout << \"${1:/* message */}\"${2} << std::endl;"
+    ],
+    "description": "Code snippet for printing to std::cout, provided the header is set"
+  },
+  "cerr": {
+    "prefix": "cerr",
+    "body": [
+      "std::cerr << \"${1:/* message */}\"${2} << std::endl;"
+    ],
+    "description": "Code snippet for printing to std::cout, provided the header is set"
+  },
+  "#def": {
+    "prefix": "#def",
+    "body": ["#define $0"],
+    "description": "Code snippet for #define \" \""
+  }
+}

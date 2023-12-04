@@ -1,0 +1,7 @@
+SKK-JISYO.*
+mason/*
+project_nvim/*
+lazy/*
+.vsnip/global.json
+rplugin.vim
+telescope_history

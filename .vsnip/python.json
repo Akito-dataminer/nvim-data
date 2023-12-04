@@ -1,0 +1,125 @@
+{
+    "try/except": {
+        "prefix": "try/except",
+        "body": [
+            "try:",
+            "\t${1:pass}",
+            "except ${2:expression} as ${3:identifier}:",
+            "\t${4:pass}"
+        ],
+        "description": "Code snippet for a try/except statement"
+    },
+    "try/finally": {
+        "prefix": "try/finally",
+        "body": ["try:", "\t${1:pass}", "finally:", "\t${2:pass}"],
+        "description": "Code snippet for a try/finally statement"
+    },
+    "try/except/else": {
+        "prefix": "try/except/else",
+        "body": [
+            "try:",
+            "\t${1:pass}",
+            "except ${2:expression} as ${3:identifier}:",
+            "\t${4:pass}",
+            "else:",
+            "\t${5:pass}"
+        ],
+        "description": "Code snippet for a try/except/else statement"
+    },
+    "try/except/finally": {
+        "prefix": "try/except/finally",
+        "body": [
+            "try:",
+            "\t${1:pass}",
+            "except ${2:expression} as ${3:identifier}:",
+            "\t${4:pass}",
+            "finally:",
+            "\t${5:pass}"
+        ],
+        "description": "Code snippet for a try/except/finally statement"
+    },
+    "try/except/else/finally": {
+        "prefix": "try/except/else/finally",
+        "body": [
+            "try:",
+            "\t${1:pass}",
+            "except ${2:expression} as ${3:identifier}:",
+            "\t${4:pass}",
+            "else:",
+            "\t${5:pass}",
+            "finally:",
+            "\t${6:pass}"
+        ],
+        "description": "Code snippet for a try/except/else/finally statement"
+    },
+    "def(class init)": {
+        "prefix": "def-class-init",
+        "body": [
+            "def __init__(self, ${1:parameter_list}):",
+            "\t${2:pass}"
+        ],
+        "description": "Code snippet for a class init method"
+    },
+    "def(class method)": {
+        "prefix": "def-method",
+        "body": [
+            "def ${1:funcname}(self, ${2:parameter_list}):",
+            "\t${3:pass}"
+        ],
+        "description": "Code snippet for a class method"
+    },
+    "def(static class method)": {
+        "prefix": "def-static-method",
+        "body": [
+            "@staticmethod",
+            "def ${1:funcname}(${2:parameter_list}):",
+            "\t${3:pass}"
+        ],
+        "description": "Code snippet for a static class method"
+    },
+    "def(abstract class method)": {
+        "prefix": "def-abstract-method",
+        "body": [
+            "def ${1:funcname}(self, ${2:parameter_list}):",
+            "\traise NotImplementedError"
+        ],
+        "description": "Code snippet for an abstract class method"
+    },
+    "lambda": {
+        "prefix": "lambda",
+        "body": ["lambda ${1:parameter_list}: ${2:expression}"],
+        "description": "Code snippet for a lambda statement"
+    },
+    "def(function)": {
+        "prefix": "defunc",
+        "body": [
+          "def ${1:function_name}(${2:parameter_list}):",
+          "\t${3:return}"
+        ],
+        "description": "Code snippet for a lambda statement"
+    },
+    "def(class)": {
+        "prefix": "class",
+        "body": [
+          "class $1:",
+          "\tdef __init__(self, ${3:parameter_list}):",
+          "\t\tpass"
+        ],
+        "description": "Code snippet for a lambda statement"
+    },
+    "def(class-inherited)": {
+        "prefix": "class-inherited",
+        "body": [
+          "class $1(${2:parent}):",
+          "\tdef __init__(self, ${3:parameter_list}):",
+          "\t\t${4:super($1, self).__init__()}",
+          "\t\t$0"
+        ],
+        "description": "Code snippet for a lambda statement"
+    },
+    "if(main)": {
+        "prefix": "__main__",
+        "body": ["if __name__ == \"__main__\":", "    ${1:pass}"],
+        "description": "Code snippet for a `if __name__ == \"__main__\": ...` block"
+    }
+}
