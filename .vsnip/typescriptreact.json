@@ -1,0 +1,9 @@
+{
+    "defunc": {
+        "prefix": "defunc",
+        "body": [
+            "function $1({$2}: {}) {$3}"
+        ],
+        "description": "Code snippet to define function"
+    }
+}
