@@ -121,5 +121,14 @@
         "prefix": "__main__",
         "body": ["if __name__ == \"__main__\":", "    ${1:pass}"],
         "description": "Code snippet for a `if __name__ == \"__main__\": ...` block"
+    },
+    "def_pytest": {
+        "prefix": "deftest",
+        "body": [
+          "def test_${1}(${2:parameter_list}):",
+          "\t$0",
+          "\tassert "
+        ],
+        "description": "Code snippet to define pytest function"
     }
 }
